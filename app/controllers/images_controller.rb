@@ -1,8 +1,9 @@
 class ImagesController < ApplicationController
-  before_action :set_image, only: [:show, :edit, :update, :destroy]
+  before_action :set_image, only: [:show, :destroy]
 
   def index
-    @images = Image.all
+    @images = Image.all.order('created_at DESC').limit(20)
+    @image = Image.new
   end
 
   def show
@@ -20,7 +21,7 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       if @image.save
-        format.html { redirect_to @image, notice: 'Image was successfully created.' }
+        format.html { redirect_to @image, notice: 'Image was successfully uploaded' }
         format.json { render :show, status: :created, location: @image }
       else
         format.html { render :new }

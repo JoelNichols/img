@@ -16,7 +16,7 @@
             <%= link_to '/', images_path %>
           </li>
           <li>
-            <%= link_to 'new', new_image_path %>
+            <a href="#" data-toggle="modal" data-target="#uploadModal">new</a>
           </li>
         </ul>
       </div>
@@ -26,10 +26,13 @@
       <%= yield %>
     </div>
 
+    <%= render 'elements/upload' %>
+
     <footer>
       <div class="container">
         <p>
-          Copyright &copy; img.joel.so
+          Copyright &copy; img.joel.so<br>
+          Licensed under the MIT License
         </p>
       </div>
     </footer>
