@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Img</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Img</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <%= link_to 'img.joel.so', images_path, :class => 'navbar-brand' %>
+        <ul class="nav navbar-nav pull-right">
+          <li>
+            <%= link_to '/', images_path %>
+          </li>
+          <li>
+            <%= link_to 'new', new_image_path %>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-</body>
+    <div class="container">
+      <%= yield %>
+    </div>
+
+  </body>
 </html>
