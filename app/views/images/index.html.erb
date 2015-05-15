@@ -1,29 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Images</h1>
+<div class="row">
+  <% @images.each do |image| %>
+    <div class="col-md-3 grid-image-container">
+      <%= link_to (image_tag image.image.url, :class => 'image'), image_path(image) %>
+    </div>
+  <% end %>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Text</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @images.each do |image| %>
-      <tr>
-        <td><%= image.title %></td>
-        <td><%= image.text %></td>
-        <td><%= link_to 'Show', image %></td>
-        <td><%= link_to 'Edit', edit_image_path(image) %></td>
-        <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Image', new_image_path %>
+<p>
+  <%= link_to 'New Image', new_image_path, :class => 'btn btn-primary' %>
+</p>

@@ -5,3 +5,18 @@
 body {
   font-family: 'Lato', sans-serif;
 }
+
+.grid-image-container {
+  margin-bottom: 32px;
+  text-align: center;
+  .image {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: 200px;
+  }
+}
+
+.center {
+  text-align: center;
+}
