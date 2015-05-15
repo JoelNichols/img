@@ -1,9 +1,11 @@
 <%= render 'elements/alert' %>
 
-<div class="row">
+<h1>Latest</h1>
+
+<div class="row image-row">
   <% @images.each do |image| %>
     <div class="col-md-3 grid-image-container">
-      <%= link_to (image_tag image.image.url, :class => 'image'), image_path(image) %>
+      <%= link_to (image_tag (image.image.url(:thumb)), :class => 'image'), image_path(image) %>
     </div>
   <% end %>
 </div>
