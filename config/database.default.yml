@@ -24,7 +24,7 @@ production:
   <<: *default
   database: db/production.sqlite3
   # adapter: mysql2
-  # database: logical
+  # database: img
   # username: username
   # password: password
   # host: 127.0.0.1
