@@ -47,3 +47,9 @@ gem 'paperclip'
 
 # Because it's pretty
 gem 'bootstrap-sass', '~> 3.3.4'
+
+# For production use
+gem 'mysql2'
+
+# For fancy IDs
+gem 'obfuscate_id'
